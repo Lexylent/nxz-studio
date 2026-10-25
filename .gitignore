@@ -1,0 +1,9 @@
+/target/
+**/target/
+**/*.rs.bk
+*.nxz
+*.nxz.tmp
+*_extracted/
+*_single_extracted/
+.DS_Store
+Thumbs.db

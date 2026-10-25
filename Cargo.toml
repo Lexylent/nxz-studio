@@ -1,0 +1,33 @@
+[package]
+name = "nxz"
+version = "2.2.0"
+edition = "2021"
+authors = ["Alexander Ibach — NextGen Archive Engineering"]
+description = "High-speed, memory-safe, seekable archiver with Smart-Stream-Router, Dynamic FOT-2, Office Unfolding, AEAD Crypto, Reed-Solomon ECC & Native GUI"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+blake3 = { version = "1.5", features = ["rayon"] }
+zstd = "0.13"
+liblzma = { version = "0.3", features = ["static", "parallel"] }
+flate2 = "1.0"
+chacha20poly1305 = "0.10"
+argon2 = "0.5"
+rand = "0.8"
+reed-solomon-erasure = "6.0"
+rayon = "1.10"
+serde = { version = "1.0", features = ["derive"] }
+bincode = "1.3"
+clap = { version = "4.5", features = ["derive"] }
+walkdir = "2.5"
+anyhow = "1.0"
+thiserror = "1.0"
+eframe = "=0.27.2"
+rfd = "0.14"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
